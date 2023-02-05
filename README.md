@@ -30,7 +30,9 @@
 **This is a PoC and was developed for educational purposes only. You may get your account banned. Use at your own risk.**
 
 > ### Spam and Inauthentic Activity on GitHub
+>
 > Automated excessive bulk activity and coordinated inauthentic activity, such as spamming, are prohibited on GitHub. Prohibited activities include:
+>
 > - (...)
 > - inauthentic interactions, such as fake accounts and automated inauthentic activity
 > - rank abuse, such as automated starring or following
@@ -67,16 +69,23 @@ TOKEN=YOUR_GITHUB_PERSONAL_ACCESS_TOKEN
 ### Follow
 
 #### Target user's followers
+
 ```
 python bot_follow.py -t <TARGET_USER>
 ```
+
 #### Followers of the most popular users from a country
+
 ([list of valid countries](https://github.com/gayanvoice/top-github-users#readme))
+
 ```
 python bot_follow.py -p <COUNTRY_NAME>
 ```
+
 #### From a file
+
 Follow users from a pre-generated file (JSON)
+
 ```
 python bot_follow.py -f <FILENAME>
 ```
@@ -86,22 +95,33 @@ python bot_follow.py -f <FILENAME>
 note: Unfollow order is FIFO, as in the most recently followed user will be the last to be unfollowed.
 
 #### All
+
 Unfollow all your followings
+
 ```
 python bot_unfollow.py -a
 ```
+
 #### Followers
+
 Only unfollow users who already follow you
+
 ```
 python bot_unfollow.py -fo
 ```
+
 #### Non-followers
+
 Only unfollow users who don't follow you back
+
 ```
 python bot_unfollow.py -nf
 ```
+
 #### From a file
+
 Unfollow users from a pre-generated file (JSON)
+
 ```
 python bot_unfollow.py -f <FILENAME>
 ```
@@ -109,7 +129,9 @@ python bot_unfollow.py -f <FILENAME>
 ### Options
 
 #### Maximum follows/unfollows
+
 Set the maximum number of follow/unfollow actions
+
 ```
 -m 300
 ```
@@ -120,21 +142,21 @@ A random delay (in seconds) is performed after follow/unfollow actions or when t
 You can change these delays to your liking with the following arguments:
 
 - Minimum delay between actions
-	```
-	-smin 20
-	```
+  ```
+  -smin 20
+  ```
 - Maximum delay between actions
-	```
-	-smax 120
-	```
+  ```
+  -smax 120
+  ```
 - Minimum delay when rate limited
-	```
-	-slmin 600
-	```
+  ```
+  -slmin 600
+  ```
 - Maximum delay when rate limited
-	```
-	-slmin 1500
-	```
+  ```
+  -slmin 1500
+  ```
 
 ## Future Implementation
 
