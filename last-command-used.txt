@@ -1,0 +1,1 @@
+python bot_follow.py -t esin -smin 5 -smax 15
