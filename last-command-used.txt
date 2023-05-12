@@ -1,1 +1,2 @@
-python bot_follow.py -t BEPb -smin 15 -smax 20
+- put your last command manually here
+python bot_follow.py -t cumsoft -smin 15 -smax 20
