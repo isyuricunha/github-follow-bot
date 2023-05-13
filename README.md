@@ -169,7 +169,7 @@ Você pode alterar esses atrasos de acordo com sua preferência com os seguintes
 
 ## Contribuindo
 
-Contribuições são bem-vindas! Leia primeiro as [diretrizes de contribuição](https://github.com/isyuricunha/.github/blob/main/CONTRIBUTING.md#contributing).
+Contribuições são bem-vindas! Leia primeiro as [diretrizes de contribuição](https://github.com/isyuricunha/github-follow-bot/blob/main/CONTRIBUTING.md#contributing).
 
 Deseja que haja outra funcionalidade? Sinta-se à vontade para abrir um [problema de solicitação de recurso](/../../issues/new?assignees=isyuricunha&labels=enhancement&template=feature-request.md&title=%5BREQUEST%5D) com sua sugestão!
 
