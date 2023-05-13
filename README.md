@@ -169,11 +169,11 @@ You can change these delays to your liking with the following arguments:
 
 ## Contributing
 
-Contributions are welcome! Read the [contribution guidelines](https://github.com/Correia-jpv/.github/blob/main/CONTRIBUTING.md#contributing) first.
+Contributions are welcome! Read the [contribution guidelines](https://github.com/isyuricunha/.github/blob/main/CONTRIBUTING.md#contributing) first.
 
-Wish there was another feature? Feel free to open an [feature request issue](/../../issues/new?assignees=Correia-jpv&labels=enhancement&template=feature-request.md&title=%5BREQUEST%5D) with your suggestion!
+Wish there was another feature? Feel free to open an [feature request issue](/../../issues/new?assignees=isyuricunha&labels=enhancement&template=feature-request.md&title=%5BREQUEST%5D) with your suggestion!
 
-If you find a bug, kindly open an [bug report issue](/../../issues/new?assignees=Correia-jpv&labels=bug&template=bug_report.md&title=%5BBUG%5D) as described in the contribution guidelines.
+If you find a bug, kindly open an [bug report issue](/../../issues/new?assignees=isyuricunha&labels=bug&template=bug_report.md&title=%5BBUG%5D) as described in the contribution guidelines.
 
 ## Resources
 
