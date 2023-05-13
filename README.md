@@ -169,11 +169,11 @@ Você pode alterar esses atrasos de acordo com sua preferência com os seguintes
 
 ## Contribuindo
 
-Contribuições são bem-vindas! Leia primeiro as [diretrizes de contribuição](https://github.com/Correia-jpv/.github/blob/main/CONTRIBUTING.md#contributing).
+Contribuições são bem-vindas! Leia primeiro as [diretrizes de contribuição](https://github.com/isyuricunha/.github/blob/main/CONTRIBUTING.md#contributing).
 
-Deseja que haja outra funcionalidade? Sinta-se à vontade para abrir um [problema de solicitação de recurso](/../../issues/new?assignees=Correia-jpv&labels=enhancement&template=feature-request.md&title=%5BREQUEST%5D) com sua sugestão!
+Deseja que haja outra funcionalidade? Sinta-se à vontade para abrir um [problema de solicitação de recurso](/../../issues/new?assignees=isyuricunha&labels=enhancement&template=feature-request.md&title=%5BREQUEST%5D) com sua sugestão!
 
-Se encontrar um bug, abra gentilmente um [problema de relatório de bug](/../../issues/new?assignees=Correia-jpv&labels=bug&template=bug_report.md&title=%5BBUG%5D) conforme descrito nas diretrizes de contribuição.
+Se encontrar um bug, abra gentilmente um [problema de relatório de bug](/../../issues/new?assignees=isyuricunha&labels=bug&template=bug_report.md&title=%5BBUG%5D) conforme descrito nas diretrizes de contribuição.
 
 ## Recursos
 
