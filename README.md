@@ -1,182 +1,182 @@
-<h2>GitHub Follow Bot</h2>&nbsp;<img align="right" width="35%" src="logo.png">
+<h2>Bot de Seguidores do GitHub</h2>&nbsp;<img align="right" width="35%" src="logo.png">
 
-<h2> Table of Contents</h2>
+<h2> Sumário</h2>
 
-- [Disclaimer](#disclaimer)
-- [Getting Started](#getting-started)
-	- [Install Requirements](#install-requirements)
-	- [Authenticate](#authenticate)
-		- [Get a GitHub Personal Access Token](#get-a-github-personal-access-token)
-		- [Add your GitHub username and PAT to `.env` file](#add-your-github-username-and-pat-to-env-file)
-- [How to Use](#how-to-use)
-	- [Follow](#follow)
-		- [Target user's followers](#target-users-followers)
-		- [Followers of the most popular users from a country](#followers-of-the-most-popular-users-from-a-country)
-		- [From a file](#from-a-file)
-	- [Unfollow](#unfollow)
-		- [All](#all)
-		- [Followers](#followers)
-		- [Non-followers](#non-followers)
-		- [From a file](#from-a-file-1)
-	- [Options](#options)
-		- [Maximum follows/unfollows](#maximum-followsunfollows)
-		- [Speed](#speed)
-- [Future Implementation](#future-implementation)
-- [Contributing](#contributing)
-- [Resources](#resources)
+- [Aviso Legal](#aviso-legal)
+- [Primeiros Passos](#primeiros-passos)
+	- [Instalação dos Requisitos](#instalação-dos-requisitos)
+	- [Autenticação](#autenticação)
+		- [Obter um Token de Acesso Pessoal do GitHub](#obter-um-token-de-acesso-pessoal-do-github)
+		- [Adicionar seu nome de usuário e PAT do GitHub ao arquivo `.env`](#adicionar-seu-nome-de-usuário-e-pat-do-github-ao-arquivo-env)
+- [Como Usar](#como-usar)
+	- [Seguir](#seguir)
+		- [Seguidores do usuário-alvo](#seguidores-do-usuário-alvo)
+		- [Seguidores dos usuários mais populares de um país](#seguidores-dos-usuários-mais-populares-de-um-país)
+		- [De um arquivo](#de-um-arquivo)
+	- [Deixar de Seguir](#deixar-de-seguir)
+		- [Todos](#todos)
+		- [Seguidores](#seguidores)
+		- [Não Seguidores](#não-seguidores)
+		- [De um arquivo](#de-um-arquivo-1)
+	- [Opções](#opções)
+		- [Número máximo de seguidas/deixar de seguir](#número-máximo-de-seguidasdeixar-de-seguir)
+		- [Velocidade](#velocidade)
+- [Implementações Futuras](#implementações-futuras)
+- [Contribuindo](#contribuindo)
+- [Recursos](#recursos)
 
-## Disclaimer
+## Aviso Legal
 
-**This is a PoC and was developed for educational purposes only. You may get your account banned. Use at your own risk.**
+**Esta é uma prova de conceito e foi desenvolvida apenas para fins educacionais. Você pode ter sua conta banida. Use por sua conta e risco.**
 
-> ### Spam and Inauthentic Activity on GitHub
+> ### Spam e Atividade Inautêntica no GitHub
 >
-> Automated excessive bulk activity and coordinated inauthentic activity, such as spamming, are prohibited on GitHub. Prohibited activities include:
+> Atividades automatizadas excessivas e coordenadas inautênticas, como spam, são proibidas no GitHub. As atividades proibidas incluem:
 >
 > - (...)
-> - inauthentic interactions, such as fake accounts and automated inauthentic activity
-> - rank abuse, such as automated starring or following
+> - interações inautênticas, como contas falsas e atividades automatizadas inautênticas
+> - abuso de classificação, como estrelar ou seguir automatizados
+>
+>[De Políticas de Uso Aceitável do GitHub (em inglês)](https://docs.github.com/en/github/site-policy/github-acceptable-use-policies#4-spam-and-inauthentic-activity-on-github)
 
-[From GitHub Acceptable Use Policies](https://docs.github.com/en/github/site-policy/github-acceptable-use-policies#4-spam-and-inauthentic-activity-on-github)
+## Primeiros Passos
 
-## Getting Started
-
-### Install Requirements
+### Instalação dos Requisitos
 
 ```
 pip install -r requirements.txt
 ```
 
-### Authenticate
+### Autenticação
 
-#### Get a GitHub Personal Access Token
+#### Obter um Token de Acesso Pessoal do GitHub
 
-Make sure to enable the `user` scope and all subscopes inside of that permission.
+Certifique-se de habilitar o escopo `user` e todos os subsescopos dentro dessa permissão.
 
-[How to get your GitHub PAT](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line)
+[Como obter seu PAT do GitHub (em inglês)](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line)
 
-#### Add your GitHub username and PAT to `.env` file
+#### Adicionar seu nome de usuário e PAT do GitHub ao arquivo `.env`
 
-Create a `.env` file on the project's root directory or edit `.env.sample` (rename to `.env`) and add your username and PAT.
-
-```
-GITHUB_USER=YOUR_GITHUB_USERNAME
-TOKEN=YOUR_GITHUB_PERSONAL_ACCESS_TOKEN
-```
-
-## How to Use
-
-### Follow
-
-#### Target user's followers
+Crie um arquivo `.env` no diretório raiz do projeto ou edite o arquivo `.env.sample` (renomeie para `.env`) e adicione seu nome de usuário e PAT.
 
 ```
-python bot_follow.py -t <TARGET_USER>
+GITHUB_USER=SEU_NOME_DE_USUÁRIO_DO_GITHUB
+TOKEN=SEU_TOKEN_DE_ACESSO_PESSOAL_DO_GITHUB
 ```
 
-#### Followers of the most popular users from a country
+## Como usar
 
-([list of valid countries](https://github.com/gayanvoice/top-github-users#readme))
+### Seguir
 
-```
-python bot_follow.py -p <COUNTRY_NAME>
-```
-
-#### From a file
-
-Follow users from a pre-generated file (JSON)
+#### Seguidores do usuário-alvo
 
 ```
-python bot_follow.py -f <FILENAME>
+python bot_follow.py -t <USUÁRIO_ALVO>
 ```
 
-### Unfollow
+#### Seguidores dos usuários mais populares de um país
 
-note: Unfollow order is FIFO, as in the most recently followed user will be the last to be unfollowed.
+([lista de países válidos](https://github.com/gayanvoice/top-github-users#readme))
 
-#### All
+```
+python bot_follow.py -p <NOME_DO_PAÍS>
+```
 
-Unfollow all your followings
+#### De um arquivo
+
+Siga usuários a partir de um arquivo pré-gerado (JSON)
+
+```
+python bot_follow.py -f <NOME_DO_ARQUIVO>
+```
+
+### Deixar de seguir
+
+Nota: A ordem de deixar de seguir é FIFO, ou seja, o usuário mais recentemente seguido será o último a ser deixado de seguir.
+
+#### Todos
+
+Deixar de seguir todos os usuários que você segue
 
 ```
 python bot_unfollow.py -a
 ```
 
-#### Followers
+#### Seguidores
 
-Only unfollow users who already follow you
+Deixar de seguir apenas os usuários que já o seguem
 
 ```
 python bot_unfollow.py -fo
 ```
 
-#### Non-followers
+#### Não seguidores
 
-Only unfollow users who don't follow you back
+Deixar de seguir apenas os usuários que não o seguem de volta
 
 ```
 python bot_unfollow.py -nf
 ```
 
-#### From a file
+#### De um arquivo
 
-Unfollow users from a pre-generated file (JSON)
+Deixar de seguir usuários a partir de um arquivo pré-gerado (JSON)
 
 ```
-python bot_unfollow.py -f <FILENAME>
+python bot_unfollow.py -f <NOME_DO_ARQUIVO>
 ```
 
-### Options
+### Opções
 
-#### Maximum follows/unfollows
+#### Máximo de seguidores/deixar de seguir
 
-Set the maximum number of follow/unfollow actions
+Defina o número máximo de ações de seguir/deixar de seguir
 
 ```
 -m 300
 ```
 
-#### Speed
+#### Velocidade
 
-A random delay (in seconds) is performed after follow/unfollow actions or when the account is rate limited.
-You can change these delays to your liking with the following arguments:
+Um atraso aleatório (em segundos) é realizado após as ações de seguir/deixar de seguir ou quando a conta está limitada pela taxa.
+Você pode alterar esses atrasos de acordo com sua preferência com os seguintes argumentos:
 
-- Minimum delay between actions
+- Atraso mínimo entre ações
   ```
   -smin 20
   ```
-- Maximum delay between actions
+- Atraso máximo entre ações
   ```
   -smax 120
   ```
-- Minimum delay when rate limited
+- Atraso mínimo quando limitado pela taxa
   ```
   -slmin 600
   ```
-- Maximum delay when rate limited
+- Atraso máximo quando limitado pela taxa
   ```
   -slmin 1500
   ```
 
-## Future Implementation
+## Implementação futura
 
-- Schedule - Bot only performs actions between set time and sleeps after off-schedule
-- Max follow per source - Follow max `n` per popular user
-- Add follow source - Follow users per topic
-- Add follow source - Grab followers from users listed in a file
-- Email followed users - Send an email to followed users with templates (colaboration, follow back or custom)
-- Star `n` repositories of followed users
+- Programação - Bot realiza ações apenas entre um horário definido e dorme fora do horário
+- Máximo de seguidores por fonte - Seguir no máximo `n` por usuário popular
+- Adicionar fonte de seguimento - Seguir usuários por tópico
+- Adicionar fonte de seguimento - Pegar seguidores de usuários listados em um arquivo
+- Enviar e-mails para usuários seguidos - Enviar um e-mail para usuários seguidos com modelos (colaboração, seguir de volta ou personalizado)
+- Favoritar `n` repositórios dos usuários seguidos
 
-## Contributing
+## Contribuindo
 
-Contributions are welcome! Read the [contribution guidelines](https://github.com/Correia-jpv/.github/blob/main/CONTRIBUTING.md#contributing) first.
+Contribuições são bem-vindas! Leia primeiro as [diretrizes de contribuição](https://github.com/Correia-jpv/.github/blob/main/CONTRIBUTING.md#contributing).
 
-Wish there was another feature? Feel free to open an [feature request issue](/../../issues/new?assignees=Correia-jpv&labels=enhancement&template=feature-request.md&title=%5BREQUEST%5D) with your suggestion!
+Deseja que haja outra funcionalidade? Sinta-se à vontade para abrir um [problema de solicitação de recurso](/../../issues/new?assignees=Correia-jpv&labels=enhancement&template=feature-request.md&title=%5BREQUEST%5D) com sua sugestão!
 
-If you find a bug, kindly open an [bug report issue](/../../issues/new?assignees=Correia-jpv&labels=bug&template=bug_report.md&title=%5BBUG%5D) as described in the contribution guidelines.
+Se encontrar um bug, abra gentilmente um [problema de relatório de bug](/../../issues/new?assignees=Correia-jpv&labels=bug&template=bug_report.md&title=%5BBUG%5D) conforme descrito nas diretrizes de contribuição.
 
-## Resources
+## Recursos
 
-- [GitHub API](https://docs.github.com/en/rest)
-- [Top GitHub Users By Country](https://github.com/gayanvoice/top-github-users)
+- [API do GitHub](https://docs.github.com/en/rest)
+- [Usuários principais do GitHub por país](https://github.com/gayanvoice/top-github-users)
 - [GitHub-Follow-Bot](https://github.com/TheDarkAssassins/Github-Follow-Bot)
