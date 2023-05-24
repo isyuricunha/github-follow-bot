@@ -202,7 +202,7 @@ class GithubAPIBot:
                 break
             else:
                 page += 1
-        
+
         return users
 
     def getFollowers(self, username=None, following=None):
@@ -218,7 +218,7 @@ class GithubAPIBot:
         )
 
     def getFollowings(self, username=None):
-        if username == None:
+        if username is None:
             username = self.username
         print(f"\nGrabbing {username}'s followings.\n")
         self.followings.extend(self.getUsers(url=f"https://api.github.com/users/{username}/following"))
@@ -248,7 +248,7 @@ class GithubAPIBot:
                 leave=False,
             )
             for user in users:
-                
+
                 # Set the bot to sleep at the set time
                 if self.sleepHour is not None and self.sleepMinute is not None and self.sleepTime is not None:
                     timeNow = datetime.datetime.now()
@@ -308,9 +308,9 @@ def sleepUntil(hour, minute):
 
     if t.timestamp() >= future.timestamp():
         future += datetime.timedelta(days=1)
-    
+
     print(f'\nSleeping... Waking up at {future.hour}:{future.minute}')
-    
+
     sleepSeconds = int((future-t).total_seconds())
     sleepSecondsObj = list(range(0, sleepSeconds))
     sleepSecondsBar = tqdm(
