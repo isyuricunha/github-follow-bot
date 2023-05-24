@@ -180,7 +180,7 @@ class GithubAPIBot:
 
             for user in res:
                 # Check if we already have enough usernames
-                if maxAction != None:
+                if maxAction is not None:
                     if len(users) >= int(maxAction):
                         break
 
@@ -194,7 +194,7 @@ class GithubAPIBot:
                     users.append(user["login"])
 
             # Check if we already have enough usernames
-            if maxAction != None:
+            if maxAction is not None:
                 if len(users) >= int(maxAction):
                     break
 
@@ -206,7 +206,7 @@ class GithubAPIBot:
         return users
 
     def getFollowers(self, username=None, following=None):
-        if username == None:
+        if username is None:
             username = self.username
         print(f"\nGrabbing {username}'s followers.\n")
         self.usersToAction.extend(
@@ -229,11 +229,11 @@ class GithubAPIBot:
         else:
 
             # Users to follow/unfollow must not exceed the given max
-            if self.maxAction != None:
+            if self.maxAction is not None:
                 self.usersToAction = self.usersToAction[: min(len(self.usersToAction), int(self.maxAction))]
 
             # Time for the bot to go to sleep
-            if self.sleepHour != None and self.sleepMinute != None and self.sleepTime != None:
+            if self.sleepHour is not None and self.sleepMinute is not None and self.sleepTime is not None:
                 sleepTime = nextSleepTime(int(self.__sleepHour), int(self.sleepMinute))
 
             # Start follow/unfollow
@@ -250,7 +250,7 @@ class GithubAPIBot:
             for user in users:
                 
                 # Set the bot to sleep at the set time
-                if self.sleepHour != None and self.sleepMinute != None and self.sleepTime != None:
+                if self.sleepHour is not None and self.sleepMinute is not None and self.sleepTime is not None:
                     timeNow = datetime.datetime.now()
                     if timeNow.timestamp() > sleepTime.timestamp():
                         sleepTime = nextSleepTime(int(self.__sleepHour), int(self.__sleepMinute))

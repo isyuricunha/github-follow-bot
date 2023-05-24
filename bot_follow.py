@@ -66,7 +66,7 @@ if args.popular:
     print("\nGrabbing most popular users' followers.\n")
     for popularUser in popularUsers:
         # Check if we already have enough usernames
-        if bot.maxAction != None:
+        if bot.maxAction is not None:
             if len(bot.usersToAction) >= int(bot.maxAction):
                 break
 
