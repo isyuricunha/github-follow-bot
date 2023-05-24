@@ -60,8 +60,7 @@ class GithubAPIBot:
 
         if res.status_code == 404:
             raise ValueError("\nFailure to Authenticate, please check Personal Access Token and Username!")
-        else:
-            print("\nSuccessful authentication.")
+        print("\nSuccessful authentication.")
 
         self.getFollowings()
 
