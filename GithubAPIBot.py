@@ -324,4 +324,4 @@ def sleepUntil(hour, minute):
     for second in sleepSecondsBar:
         time.sleep(1)
 
-    print(f'\nWaking up...')
+    print(f'\nWaking up...');
