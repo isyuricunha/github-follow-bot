@@ -199,8 +199,7 @@ class GithubAPIBot:
 
             if res == []:
                 break
-            else:
-                page += 1
+            page += 1
 
         return users
 
