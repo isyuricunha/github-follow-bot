@@ -5,8 +5,6 @@ import requests
 from requests.adapters import HTTPAdapter
 import time
 from tqdm import tqdm
-from urllib.parse import parse_qs
-from urllib.parse import urlparse
 from urllib3.util import Retry
 
 
