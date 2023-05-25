@@ -1,2 +1,7 @@
 - put your last command manually here
-python bot_follow.py -t cumsoft -smin 15 -smax 20
+
+follow:
+python bot_follow.py -t revanced -smin 15 -smax 20
+
+unfollow:
+python bot_unfollow.py -a
