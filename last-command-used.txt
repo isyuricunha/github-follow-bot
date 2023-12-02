@@ -2,6 +2,7 @@
 
 follow:
 python bot_follow.py -t AYIDouble -smin 15 -smax 20
+python bot_follow.py -t filipedeschamps -smin 15 -smax 20
 
 unfollow:
 python bot_unfollow.py -a
